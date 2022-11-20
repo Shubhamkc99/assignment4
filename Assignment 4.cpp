@@ -3,8 +3,8 @@
 #include<iostream>
 #include <iomanip>   
 #include<fstream>
-#include<ctime> 
-
+#include<ctime>
+#include<windows.h> 
 using namespace std;
 class EarnedMoney{
     private:
@@ -225,15 +225,23 @@ int menu(){
     cin>>ch;
     return(ch);
 }
-
+void Intro(){
+    char intro[200]="\t\tOOP Theory Project\n\t\tSubmitted By - Shubham KC\n\t\tSubmitted to - Abinas Panda";
+    for(int i=0;i<strlen (intro);i++){
+        cout<<intro[i];
+        Sleep(100);
+    }
+    Sleep(2000);
+}
 
 int main(){
-    system("cls");
+    system("CLS");
+    Intro();
     Vehicle vehicle;
     EarnedMoney earnedMoney;
     int breakInfiniteloop=0,vno;
     while(1){
-        system("cls");
+        system("CLS");
         switch(menu()){
             case 1:
                 vehicle.setVehicle();
@@ -265,6 +273,7 @@ int main(){
         if(breakInfiniteloop==1){
             break;
         }
-    }//end of infinite loop
+    }//end of infinite loop1
+
     return(0);
 }
